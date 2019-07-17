@@ -3,7 +3,7 @@ class Account :
         self.accNo= int(input("Enter the account no : "))
         self.name = input("Enter the account holder name : ")
         self.type = input("Ente the type of account [Current/Saving] : ")
-        self.deposit = int(input("Enter The Initial amount(>=500 for Saving and >=1000 for current"))
+        self.deposit = float(input("Enter The Initial amount(>=500 for Saving and >=1000 for current"))
         print("\n\n\nAccount Created")
     
         print("Account Number : ",self.accNo)
@@ -13,9 +13,9 @@ class Account :
 
     def depositamount(self): 
         amount=float(input("Enter amount to be Deposited: ")) 
-        self.balance = amount 
-        print("\n Amount Deposited:",amount) 
-
+        self.balance += amount 
+        print("\n Amount Deposited:",self.balance) 
+  
     def withdraw(self): 
         amount = float(input("Enter amount to be Withdrawn: ")) 
         if self.balance>=amount: 
@@ -23,7 +23,7 @@ class Account :
             print("\n You Withdrew:", amount) 
         else: 
             print("\n Insufficient balance  ") 
-    # created and function where we will display available balance
+    
     def display(self): 
         print("\n Net Available Balance=",self.balance) 
 
